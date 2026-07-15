@@ -222,3 +222,4 @@ Practical docs scaffold:
 - Keep project facts in one canonical place.
 - Treat security shortcuts as explicit decisions, not accidents.
 - Separate assumptions, documentation claims, observed behavior, tests, and approved decisions.
+
