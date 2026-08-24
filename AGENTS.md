@@ -11,6 +11,13 @@ Current state: not yet project-specific. Fill `.ai/context/project-map.md` after
 3. Follow `.ai/context-loading-rules.md`; do not load the whole repository unless the task requires it.
 4. Load only the selected route, relevant skill, and up to three detailed context files initially.
 
+## Local-First Memory
+
+- Read `.ai/context/memory-policy.md` before historical recall or durable memory writes.
+- Query Agent Rails SQLite memory before platform-native memory.
+- Invoke `.ai/tools/memory.cmd` on Windows or `.ai/tools/memory.sh` on macOS/Linux; never run the Python engine directly.
+- Show the returned aggregate memory activity indicator in the active chat response.
+
 ## Routing
 
 Route work through `.ai/task-routing.md`. Choose one primary specialist first, then add supporting specialists only when the project actually crosses those boundaries.
@@ -77,4 +84,5 @@ Initial placeholder:
 - Preserve existing user work and existing guidance unless replacement is explicitly approved.
 - Treat archives and generated output as historical or provisional unless promoted by an approved decision.
 - Do not commit secrets, credentials, private keys, tokens, or raw private data.
+- Do not commit `.ai/runtime/` or `.ai/memory/`; they contain the private virtual environment and memory store.
 - Keep local tooling state out of project knowledge unless `.ai/context/project-map.md` explicitly promotes it.

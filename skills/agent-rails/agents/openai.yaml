@@ -1,0 +1,6 @@
+interface:
+  display_name: "Agent Rails"
+  short_description: "Create reusable AI workspace resource packs"
+  default_prompt: "Use $agent-rails to create a tiered AI resource pack for this project."
+policy:
+  allow_implicit_invocation: true

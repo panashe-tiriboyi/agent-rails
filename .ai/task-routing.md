@@ -2,6 +2,10 @@
 
 Select one primary specialist before loading detailed context. Add supporting specialists only when the request crosses a real boundary.
 
+Historical recall is a pre-route action: use the `agent-rails-memory` skill and
+`.ai/context/memory-policy.md` before platform-native memory whenever prior
+decisions, fixes, rationale, preferences, or task outcomes may matter.
+
 ## Route Decision
 
 ```text

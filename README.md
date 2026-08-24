@@ -23,13 +23,46 @@ It pairs with the `agent-rails` skill. The README is the human entrypoint; the f
 5. Approve file generation only after the plan matches your intent.
 6. Scaffold the repo: either let the agent generate the files from the approved plan, or run the bundled `agent-rails` skill for deterministic generation (see below).
 
+## Local SQLite Memory
+
+Generated Agent Rails packs include a dependency-free, repository-local memory
+engine. It stores sanitized summaries as Markdown, indexes them with SQLite
+FTS5, and requires agents to search it before platform-native memory when a
+request depends on historical context.
+
+Python 3.11 or newer is the only prerequisite. The launchers automatically
+create and reuse `.ai/runtime/venv/`; no packages are installed.
+
+Windows:
+
+```powershell
+.ai\tools\memory.cmd doctor
+.ai\tools\memory.cmd init
+.ai\tools\memory.cmd search --query "prior architecture decision"
+```
+
+macOS/Linux:
+
+```bash
+.ai/tools/memory.sh doctor
+.ai/tools/memory.sh init
+.ai/tools/memory.sh search --query "prior architecture decision"
+```
+
+Never run `agent_rails_memory.py` directly. Private Markdown logs and the SQLite
+index live under Git-ignored `.ai/memory/`; the virtual environment lives under
+Git-ignored `.ai/runtime/`. The store is plaintext and relies on OS account and disk protection.
+See `.ai/context/memory-policy.md` for ingestion, recall, fallback, indicators,
+and retention rules.
+
 ## Kit vs. Bundled Skill Pack
 
 The bundled skill generates a minimal portable core by design: `AGENTS.md`, `CODEX.md`, the base `.ai/` scaffold with core context primers and prompts, and requirements intake. This kit is the full reference scaffold — it additionally carries the `CLAUDE.md`, `GEMINI.md`, `CURSOR.md`, and Copilot adapters plus extended context primers (architecture, testing, security, operations, migration, requirements flow). Copy those from the kit into a target repo when the project needs more than the core.
 
 ## Install The Skill
 
-This kit includes `skills/agent-rails.zip`.
+This kit includes canonical unpacked source in `skills/agent-rails/` and the
+deterministically built `skills/agent-rails.zip` release artifact.
 
 To install it manually:
 
@@ -222,4 +255,11 @@ Practical docs scaffold:
 - Keep project facts in one canonical place.
 - Treat security shortcuts as explicit decisions, not accidents.
 - Separate assumptions, documentation claims, observed behavior, tests, and approved decisions.
+
+## Contributing and Releases
+
+Agent Rails uses a review-first GitHub workflow. Develop changes on focused
+branches, run current verification, and merge into `main` only through a reviewed
+pull request. See [CONTRIBUTING.md](CONTRIBUTING.md) for setup and verification,
+and [CHANGELOG.md](CHANGELOG.md) for unreleased user-facing changes.
 

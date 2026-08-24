@@ -1,0 +1,33 @@
+# Context Loading Rules
+
+Use context deliberately.
+
+## Default Flow
+
+1. Read `AGENTS.md`.
+2. Read `.ai/instructions.md`.
+3. Select one primary route from `.ai/task-routing.md`.
+4. Load no more than three detailed context files initially.
+5. Expand context only when the current task requires it.
+
+If the request depends on historical context, read `.ai/context/memory-policy.md`
+and search Agent Rails memory before loading platform-native memory.
+
+## Search Before Broad Reads
+
+Use targeted search for identifiers, routes, commands, and docs. Avoid reading the whole repository or large archives unless the selected task requires it.
+
+## Source Priority
+
+1. Current code and executable verification.
+2. Approved decisions in `.ai/context/decisions.md`.
+3. Current requirements in `docs/requirements/`.
+4. Current architecture and product docs.
+5. Recalled Agent Rails memory as historical evidence.
+6. Historical archives, notes, or generated output.
+
+Documentation is a claim until checked against code, verification evidence, or an approved decision.
+
+## Archives
+
+Treat archive folders as historical and non-authoritative unless `.ai/context/project-map.md` explicitly promotes a file.

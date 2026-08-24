@@ -10,6 +10,14 @@ Use these rules for all AI-assisted work in this repository.
 - Preserve unrelated user work.
 - Ask only when the answer cannot be discovered and a wrong assumption would be risky.
 
+## Local-First Memory
+
+- Follow `.ai/context/memory-policy.md` for historical recall and durable memory writes.
+- Search local SQLite memory before platform-native memory.
+- Use `.ai/tools/memory.cmd` on Windows or `.ai/tools/memory.sh` on macOS/Linux so memory code runs inside the repository virtual environment.
+- Append one aggregate memory indicator whenever the engine is used.
+- Store sanitized summaries only at material task boundaries; never store raw transcripts or secret material.
+
 ## Requirement Flow
 
 - New behavior, architecture, workflow, data, security, deployment, or product changes start as requirements in `docs/requirements/`.
