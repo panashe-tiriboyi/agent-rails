@@ -10,6 +10,9 @@ Use context deliberately.
 4. Load no more than three detailed context files initially.
 5. Expand context only when the current task requires it.
 
+If the request depends on historical context, read `.ai/context/memory-policy.md`
+and search Agent Rails memory before loading platform-native memory.
+
 ## Search Before Broad Reads
 
 Use targeted search for identifiers, routes, commands, docs, and error messages. Avoid reading the whole repository or large archives unless the selected task requires it.
@@ -20,7 +23,8 @@ Use targeted search for identifiers, routes, commands, docs, and error messages.
 2. Approved decisions in `.ai/context/decisions.md`.
 3. Current requirements in `docs/requirements/`.
 4. Current architecture and product docs.
-5. Historical archives, generated notes, or old plans.
+5. Recalled Agent Rails memory as historical evidence.
+6. Historical archives, generated notes, or old plans.
 
 Documentation is a claim until checked against code, verification evidence, or an approved decision.
 

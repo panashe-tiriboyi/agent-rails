@@ -9,3 +9,4 @@ Before making or suggesting non-trivial changes:
 - Load only relevant context from `.ai/context/`.
 - Respect requirement approval rules in `docs/requirements/`.
 - Preserve security, testability, and separation of concerns.
+- Follow `.ai/context/memory-policy.md`; query local Agent Rails memory through the platform launcher before native memory and disclose memory activity.

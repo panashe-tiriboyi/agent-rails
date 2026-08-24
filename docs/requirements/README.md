@@ -21,8 +21,10 @@ No active requests recorded yet.
 
 ## Approved Requests
 
-No approved requests recorded yet.
+No approved requests awaiting implementation.
 
 ## Completed Requests
 
-No completed requests recorded yet.
+- `REQ-2026-001` - Agent Rails SQLite Memory Engine
+- `REQ-2026-002` - Consolidate Agent Rails runtime under `.ai`
+- `REQ-2026-003` - Development branch and GitHub pull-request workflow

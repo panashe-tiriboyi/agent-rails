@@ -1,0 +1,7 @@
+# Agent Rails private local state inside the canonical AI resource directory.
+.ai/runtime/
+.ai/memory/
+
+# Python bytecode created by local Agent Rails verification.
+__pycache__/
+*.py[cod]

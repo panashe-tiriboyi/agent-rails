@@ -1,29 +1,39 @@
 # Project Map
 
-Project: <project name>
+Project: Agent Rails
 
-Purpose: <project purpose>
+Purpose: Portable AI-resource scaffolding, governance guidance, and local-first agent memory.
 
-Resource mode: <new-project|existing-project|migration>
+Resource mode: existing-project
 
-Governance tier: <lightweight|standard|strict>
+Governance tier: standard
 
 ## Code
 
-Record source folders, services, applications, packages, and ownership.
+- `.ai/tools/`: tracked local runtime and platform launchers.
+- `skills/agent-rails/`: canonical distributable skill source and generator.
+- `prompts/`: full reference prompt suite.
 
 ## Tests
 
-Record test folders, frameworks, fixtures, and verification commands.
+- `tests/`: standard-library unit and integration tests.
+- Verification: run `python -m unittest discover -s tests -v` from the project virtual environment.
+- Package verification: `python scripts/build_skill_package.py --check`.
 
 ## Documentation
 
-Record source-of-truth docs, generated docs, archives, and docs that are only claims.
+- `AGENTS.md` and `.ai/instructions.md`: canonical operating guidance.
+- `.ai/context/memory-policy.md`: memory behavior contract.
+- `docs/requirements/` and `.ai/context/decisions.md`: approved changes and decisions.
+- `README.md`: human entry point and usage guide.
 
 ## Deployment And Operations
 
-Record deployment paths, environments, infrastructure, runbooks, and secrets handling rules.
+- `skills/agent-rails.zip`: deterministic release artifact.
+- `.ai/runtime/venv/`: per-working-copy Python virtual environment.
+- `.ai/memory/`: private Markdown and SQLite runtime store.
 
 ## Local Tooling Exclusions
 
-Record editor, agent, cache, build output, and machine-specific paths that should not be treated as project knowledge.
+- `.ai/runtime/`, `.ai/memory/`, `.codex/`, `.agents/`, `.vscode/`, `.idea/`, caches, and build output.
+- Local memory is historical evidence and must not override current code or approved decisions.
